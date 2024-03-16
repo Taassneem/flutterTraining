@@ -6,12 +6,14 @@ void main() {
   //! Task 1
   print('Enter any number');
   int number = int.parse(stdin.readLineSync()!);
-  if (number % 5 == 0) {
-    print('FIZZ');
+  if (number % 5 == 0 && number % 3 == 0) {
+    print('FIZZBUZZ');
   } else if (number % 3 == 0) {
     print('BUZZ');
-  } else if (number % 5 == 0 && number % 3 == 0) {
-    print('FIZZBUZZ');
+  } else if (number % 5 == 0) {
+    print('FIZZ');
+  } else {
+    print('Not dividable');
   }
 
   //! Task 2
@@ -37,7 +39,7 @@ void main() {
     default:
       print('wrong');
   }
-  
+
   //! Task 3
   print('Enter word');
   String word = stdin.readLineSync()!;
