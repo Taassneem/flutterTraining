@@ -11,6 +11,12 @@ void main() {
   myAccount.deposit(500);
   myAccount.withdraw(200);
   myAccount.withdraw(1500);
+  Shape circle = Circle(radius: 5);
+  Shape rectangle = Rectangle2(width: 4, height: 6);
+  Shape triangle = Triangle(parameter1: 3, parameter2: 4, parameter3: 5);
+  printShapeInfo(circle);
+  printShapeInfo(rectangle);
+  printShapeInfo(triangle);
 }
 
 abstract class Storage {
@@ -105,4 +111,65 @@ class Account {
       print('Invalid withdrawal amount.');
     }
   }
+}
+
+abstract class Shape {
+  calculateArea();
+  calculatePerimeter();
+}
+
+class Circle implements Shape {
+  final double radius;
+
+  Circle({required this.radius});
+  @override
+  calculateArea() {
+    return radius * radius * 3.14;
+  }
+
+  @override
+  calculatePerimeter() {
+    return 2 * 3.14 * radius;
+  }
+}
+
+class Rectangle2 implements Shape {
+  final double width;
+  final double height;
+
+  Rectangle2({required this.width, required this.height});
+  @override
+  calculateArea() {
+    return width * height;
+  }
+
+  @override
+  calculatePerimeter() {
+    return (width + height) * 2;
+  }
+}
+
+class Triangle implements Shape {
+  final double parameter1;
+  final double parameter2;
+  final double parameter3;
+
+  Triangle(
+      {required this.parameter1,
+      required this.parameter2,
+      required this.parameter3});
+  @override
+  calculateArea() {
+    return (parameter1 + parameter2 + parameter3) / 2;
+  }
+
+  @override
+  calculatePerimeter() {
+    return parameter1 + parameter2 + parameter3;
+  }
+}
+
+void printShapeInfo(Shape shape) {
+  print('Area${shape.calculateArea()}');
+  print('Perimetere${shape.calculatePerimeter()}');
 }
