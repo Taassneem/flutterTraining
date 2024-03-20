@@ -1,4 +1,3 @@
-// ignore_for_file: unused_element, avoid_print
 void main() {
   // Example usage
   print(youAreWonderful("Bob"));
@@ -29,7 +28,6 @@ void primeNumber({required int n}) {
       print('Number is not prime.');
     }
   }
-  print('Number is prime.');
 }
 
 // required
@@ -40,7 +38,6 @@ void primeNumber2(int n) {
   for (int i = 2; i < n; i++) {
     if (n % i == 0) print('Number is not prime.');
   }
-  print('Number is prime.');
 }
 
 // optional
@@ -51,7 +48,6 @@ void primeNumber3([int? n]) {
   for (int i = 2; i * i < n!;) {
     if (n % i == 0) print('Number is not prime.');
   }
-  print('Number is prime.');
 }
 
 //! task 3
