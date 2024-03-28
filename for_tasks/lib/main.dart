@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:session_two/business_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Text('Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: BusinessCard(),
     );
   }
 }

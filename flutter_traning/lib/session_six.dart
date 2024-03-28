@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_overrides
+
 void main() {
   Car firstCar = Car(name: 'BMW', model: '2024', color: 'Grey');
   print(firstCar.name);
@@ -54,7 +56,6 @@ class Shape {
 class Rectangle extends Shape {
   @override
   areaMethod() {
-    // TODO: implement area
     super.areaMethod();
   }
 
@@ -64,7 +65,6 @@ class Rectangle extends Shape {
 class Square extends Shape {
   @override
   areaMethod() {
-    // TODO: implement areaMethod
     return super.areaMethod();
   }
 
