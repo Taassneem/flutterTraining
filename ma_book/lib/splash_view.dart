@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ma_book/sign_in_view.dart';
+import 'package:ma_book/login_needed.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -16,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
       const Duration(milliseconds: 500),
       () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const SignInView()));
+            MaterialPageRoute(builder: (context) => const LoginNeeded()));
       },
     );
   }

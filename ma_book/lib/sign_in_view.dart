@@ -7,29 +7,53 @@ class SignInView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          leading: const Icon(Icons.cancel_outlined),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
           title: const Text(
-            'Login to Continue',
-            style: TextStyle(fontWeight: FontWeight.w700),
+            'Welcome to MaBook',
+            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
           ),
           centerTitle: true),
-      body: Column(
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: const Color(0xffEEF1F1)),
-                child: Column(children: [
-                  Image.asset(
-                    'assets/images/login.png',
-                    height: 50,
-                  ),
-                  const Text('Please Login')
-                ])),
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          children: [
+            const TextField(textInputAction: TextInputAction.next),
+            const SizedBox(height: 24),
+            const TextField(
+              keyboardType: TextInputType.number,
+              obscureText: true,
+              textInputAction: TextInputAction.done,
+            ),
+            const Spacer(),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: const Color(0xff3E494A),
+              child: const Center(
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16),
+                ),
+              ),
+            ),
+            const SizedBox(height: 14),
+            const Text(
+              'Forgot Password?',
+              style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12),
+            )
+          ],
+        ),
       ),
     );
   }
