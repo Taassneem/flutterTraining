@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:ma_book/name_view.dart';
 import 'package:ma_book/sign_in_view.dart';
 
 class SignUpView extends StatefulWidget {
@@ -34,12 +34,28 @@ class _SignUpViewState extends State<SignUpView> {
           padding: const EdgeInsets.all(24.0),
           child: Column(
             children: [
-              const TextField(textInputAction: TextInputAction.next),
+              TextFormField(
+                textInputAction: TextInputAction.next,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Field is required';
+                  } else if (!value.contains('@gmail.com')) {
+                    return 'Enter valid email';
+                  }
+                  return null;
+                },
+              ),
               const SizedBox(height: 24),
-              TextField(
+              TextFormField(
                 keyboardType: TextInputType.number,
                 obscureText: isVisability,
                 textInputAction: TextInputAction.done,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Field is required';
+                  }
+                  return null;
+                },
                 decoration: InputDecoration(
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -73,17 +89,25 @@ class _SignUpViewState extends State<SignUpView> {
                 ],
               ),
               const SizedBox(height: 16),
-              Container(
-                width: double.infinity,
-                height: 45,
-                color: const Color(0xff3E494A),
-                child: const Center(
-                  child: Text(
-                    'Register',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NameView()));
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 45,
+                  color: const Color(0xff3E494A),
+                  child: const Center(
+                    child: Text(
+                      'Register',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16),
+                    ),
                   ),
                 ),
               ),

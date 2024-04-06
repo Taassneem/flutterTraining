@@ -21,7 +21,6 @@ class LoginNeeded extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 24),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -49,7 +48,7 @@ class LoginNeeded extends StatelessWidget {
                           )
                         ])),
               ),
-              const SizedBox(height: 90),
+              const SizedBox(height: 80),
               GestureDetector(
                 onTap: () {
                   Navigator.push(

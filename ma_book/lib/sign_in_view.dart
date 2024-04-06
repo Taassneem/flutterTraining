@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ma_book/home_view.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
@@ -22,25 +23,47 @@ class SignInView extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
-            const TextField(textInputAction: TextInputAction.next),
+            TextFormField(
+              textInputAction: TextInputAction.next,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Field is required';
+                } else if (!value.contains('@gmail.com')) {
+                  return 'Enter valid email';
+                }
+                return null;
+              },
+            ),
             const SizedBox(height: 24),
-            const TextField(
+            TextFormField(
               keyboardType: TextInputType.number,
               obscureText: true,
               textInputAction: TextInputAction.done,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Field is required';
+                }
+                return null;
+              },
             ),
             const Spacer(),
-            Container(
-              width: double.infinity,
-              height: 50,
-              color: const Color(0xff3E494A),
-              child: const Center(
-                child: Text(
-                  'Login',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const HomeView()));
+              },
+              child: Container(
+                width: double.infinity,
+                height: 50,
+                color: const Color(0xff3E494A),
+                child: const Center(
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16),
+                  ),
                 ),
               ),
             ),
