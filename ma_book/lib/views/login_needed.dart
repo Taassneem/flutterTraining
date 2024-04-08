@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ma_book/sign_in_view.dart';
-import 'package:ma_book/sign_up_view.dart';
+import 'package:ma_book/views/sign_in_view.dart';
+import 'package:ma_book/views/sign_up_view.dart';
 
 class LoginNeeded extends StatelessWidget {
   const LoginNeeded({super.key});

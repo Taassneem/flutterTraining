@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ma_book/login_needed.dart';
+import 'package:ma_book/views/login_needed.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
