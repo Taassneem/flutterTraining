@@ -24,6 +24,7 @@ class LoginForm extends StatelessWidget {
             prefixIcon: Icon(Icons.lock_outline, color: Colors.red),
             hintText: 'password',
             isSecure: true,
+            isFinalField: true,
           ),
           Row(
             children: [
@@ -33,29 +34,36 @@ class LoginForm extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 40),
-          Container(
-            padding: const EdgeInsets.all(3),
-            width: MediaQuery.sizeOf(context).width,
-            decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xffFFDD6C),
-                    Color(0xffFF3304),
-                  ],
-                  end: Alignment.topLeft,
-                  begin: Alignment.topRight,
-                ),
-                borderRadius: BorderRadius.circular(5)),
-            child: Center(
-                child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Login',
-                      style: GoogleFonts.baloo2(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500),
-                    ))),
+          GestureDetector(
+            onTap: () {
+              if (formKey.currentState!.validate()) {
+                const SnackBar(
+                  content: Text('Succcessfuly'),
+                );
+              }
+            },
+            child: Container(
+              padding: const EdgeInsets.all(8),
+              width: MediaQuery.sizeOf(context).width,
+              decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color(0xffFFDD6C),
+                      Color(0xffFF3304),
+                    ],
+                    end: Alignment.topLeft,
+                    begin: Alignment.topRight,
+                  ),
+                  borderRadius: BorderRadius.circular(5)),
+              child: Center(
+                  child: Text(
+                'Login',
+                style: GoogleFonts.baloo2(
+                    fontSize: 18,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500),
+              )),
+            ),
           ),
         ],
       ),

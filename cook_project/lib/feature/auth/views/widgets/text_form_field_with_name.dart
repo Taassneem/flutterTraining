@@ -8,11 +8,13 @@ class TextFormFieldWithName extends StatelessWidget {
     required this.hintText,
     required this.prefixIcon,
     this.isSecure = false,
+    this.isFinalField = false,
   });
   final String name;
   final String hintText;
   final Widget prefixIcon;
   final bool isSecure;
+  final bool isFinalField;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,6 +33,8 @@ class TextFormFieldWithName extends StatelessWidget {
             return null;
           },
           obscureText: isSecure ? true : false,
+          textInputAction:
+              isFinalField ? TextInputAction.done : TextInputAction.next,
           decoration: InputDecoration(
             filled: true,
             prefixIcon: prefixIcon,
