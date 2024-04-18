@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ma_book/views/home_view.dart';
 
 class SignInForm extends StatelessWidget {
-   SignInForm({
+  SignInForm({
     super.key,
   });
   final GlobalKey<FormState> formKey = GlobalKey();
