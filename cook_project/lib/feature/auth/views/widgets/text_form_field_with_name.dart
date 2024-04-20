@@ -9,12 +9,14 @@ class TextFormFieldWithName extends StatelessWidget {
     required this.prefixIcon,
     this.isSecure = false,
     this.isFinalField = false,
+    // required this.content,
   });
   final String name;
   final String hintText;
   final Widget prefixIcon;
   final bool isSecure;
   final bool isFinalField;
+  // final String content;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,6 +31,8 @@ class TextFormFieldWithName extends StatelessWidget {
           validator: (value) {
             if (value?.isEmpty ?? true) {
               return 'Field is required';
+            } else if (!value!.contains('flutter')) {
+              return 'Enter valid input';
             }
             return null;
           },

@@ -1,6 +1,7 @@
 import 'package:cook_project/feature/auth/views/login_view.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'widgets/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -28,30 +29,4 @@ class _SplashViewState extends State<SplashView> {
   }
 }
 
-class SplashViewbody extends StatelessWidget {
-  const SplashViewbody({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset('assets/images/cook.png'),
-          Text(
-            'Cook',
-            style:
-                GoogleFonts.baloo2(fontSize: 36, fontWeight: FontWeight.w700),
-          ),
-          Text(
-            'everyons\'s chef',
-            style:
-                GoogleFonts.baloo2(fontSize: 24, fontWeight: FontWeight.w400),
-          )
-        ],
-      ),
-    );
-  }
-}

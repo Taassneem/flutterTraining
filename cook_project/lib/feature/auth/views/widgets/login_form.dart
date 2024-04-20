@@ -1,3 +1,4 @@
+import 'package:cook_project/feature/base/views/base_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,6 +19,7 @@ class LoginForm extends StatelessWidget {
             name: 'Username',
             prefixIcon: Icon(Icons.person_outlined, color: Colors.red),
             hintText: 'username',
+            // content: 'flutter@gmail.com',
           ),
           const TextFormFieldWithName(
             name: 'Password',
@@ -25,6 +27,7 @@ class LoginForm extends StatelessWidget {
             hintText: 'password',
             isSecure: true,
             isFinalField: true,
+            // content: 'flutter123',
           ),
           Row(
             children: [
@@ -37,9 +40,8 @@ class LoginForm extends StatelessWidget {
           GestureDetector(
             onTap: () {
               if (formKey.currentState!.validate()) {
-                const SnackBar(
-                  content: Text('Succcessfuly'),
-                );
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (_) => const BaseView()));
               }
             },
             child: Container(
